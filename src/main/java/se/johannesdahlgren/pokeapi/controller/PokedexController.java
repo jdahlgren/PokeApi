@@ -19,8 +19,8 @@ public class PokedexController {
   }
 
   @GetMapping
-  public PokeApiList getPokedex() {
-    return pokedexService.getPokeApiList();
+  public PokeApiList listPokedex() {
+    return pokedexService.listPokedex();
   }
 
   @GetMapping("/{id}")
