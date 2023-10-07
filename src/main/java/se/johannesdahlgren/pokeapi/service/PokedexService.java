@@ -3,8 +3,8 @@ package se.johannesdahlgren.pokeapi.service;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import se.johannesdahlgren.pokeapi.client.PokeApiClient;
-import se.johannesdahlgren.pokeapi.model.PokeApiList;
-import se.johannesdahlgren.pokeapi.model.Pokedex;
+import se.johannesdahlgren.pokeapi.model.pokedex.PokedexList;
+import se.johannesdahlgren.pokeapi.model.pokedex.Pokedex;
 
 @Service
 public class PokedexService {
@@ -17,7 +17,7 @@ public class PokedexService {
   }
 
   @Cacheable(value = "pokedexList")
-  public PokeApiList listPokedex() {
+  public PokedexList listPokedex() {
     return pokeApiClient.listPokedex(0, MAX_POKEDEXES);
   }
 
