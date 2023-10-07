@@ -6,6 +6,7 @@ import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.HttpExchange;
 import se.johannesdahlgren.pokeapi.model.pokedex.PokedexList;
 import se.johannesdahlgren.pokeapi.model.pokedex.Pokedex;
+import se.johannesdahlgren.pokeapi.model.pokemon.species.PokemonSpecies;
 
 @HttpExchange
 public interface PokeApiClient {
@@ -15,5 +16,8 @@ public interface PokeApiClient {
 
   @GetExchange("pokedex/{id}")
   Pokedex getPokedex(@PathVariable String id);
+
+  @GetExchange("pokemon-species/{id}")
+  PokemonSpecies getSpecies(@PathVariable String id);
 
 }
